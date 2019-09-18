@@ -46,7 +46,7 @@ class User(db.Model, UserMixin):
 
     def is_following(self, user):
         return self.followed.filter(
-            followers.c.follower_id == user.id).count() > 0
+            followers.c.followed_id == user.id).count() > 0
 
     def follow(self, user):
         if not self.is_following(user):
