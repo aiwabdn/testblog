@@ -10,10 +10,6 @@ followers = db.Table(
                            db.ForeignKey('user.id')),
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id')))
 
-# class Followers(db.Model):
-#     follower_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
-#     followed_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
-
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)

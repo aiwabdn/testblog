@@ -47,3 +47,8 @@ class EditProfileForm(FlaskForm):
             if user is not None:
                 raise ValidationError('User name is taken')
 
+
+class PostForm(FlaskForm):
+    post = TextAreaField('Say something', validators=[
+        DataRequired(), Length(min=1, max=1024)])
+    submit = SubmitField('Post')
